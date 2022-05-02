@@ -10,6 +10,6 @@ Blender Version: **2.93+, 3.0+**
 - Open Blender and select Edit->Preferences
 - Click Add-ons category and then 'Install...' button.
 - Select the downloaded archive file from the link.
-- Check the 'Armature Templates' option.
+- Check the 'Workspace Manager' option.
 
 ![](images/Cover.png)
