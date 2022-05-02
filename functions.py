@@ -75,6 +75,7 @@ def delete_workspace_screens(name, temp=False):
     if workspace:
         screens = []
         for s in workspace.screens:
+            s.user_clear()
             s.name += '_@#TEMP#@'
             screens.append(s)
         bpy.data.batch_remove(ids=screens)
@@ -89,7 +90,8 @@ def append_data_from_a_file(filepath, name, duplicates='SKIP'):
             if duplicates == 'SKIP' and w not in bpy.data.workspaces:
                 data_to.workspaces.append(w)
             if duplicates == 'OVERWRITE':
-                delete_workspace_screens(name, temp=True)
+                # if bpy.app.version >= (3, 2, 0):
+                #     delete_workspace_screens(name, temp=True)
                 data_to.workspaces.append(w)
             if duplicates == 'RENAME':
                 workspace = w
